@@ -104,6 +104,12 @@ if not st.session_state.authenticated:
         body {
             background-color: #0A2A43;
         }
+        
+        /* Adiciona espaço para a logo */
+        .login-logo {
+            margin-bottom: 20px;
+        }
+
 
         /* Centraliza o container do login */
         .login-container {
@@ -175,23 +181,12 @@ if not st.session_state.authenticated:
         .login-button:active {
             transform: scale(0.98);
         }
-
-        /* Link de esqueci minha senha */
-        .forgot-password {
-            margin-top: 10px;
-            font-size: 14px;
-        }
-        .forgot-password a {
-            color: #0A2A43;
-            text-decoration: none;
-        }
-        .forgot-password a:hover {
-            text-decoration: underline;
-        }
     </style>
     """, unsafe_allow_html=True)
 
     with st.container():
+        st.markdown('<div class="login-logo"><img src="https://grupodamezza.com.br/wp-content/webp-express/webp-images/uploads/2023/10/logo-em-verde.png.webp" alt="Logo"></div>', unsafe_allow_html=True)  # Substitua pela URL da sua logo
+
         st.markdown('<div class="login-title">LOGIN</div>', unsafe_allow_html=True)
 
         email = st.text_input("Usuário", key="login_email", placeholder="Digite seu usuário")
